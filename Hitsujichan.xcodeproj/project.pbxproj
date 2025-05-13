@@ -21,6 +21,11 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		4270268B2DD3A019006F0DF6 /* material */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = material;
+			sourceTree = "<group>";
+		};
 		691389522DD08DA3002D0506 /* Hitsujichan */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
@@ -46,6 +51,7 @@
 			isa = PBXGroup;
 			children = (
 				691389522DD08DA3002D0506 /* Hitsujichan */,
+				4270268B2DD3A019006F0DF6 /* material */,
 				691389512DD08DA3002D0506 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -74,6 +80,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+				4270268B2DD3A019006F0DF6 /* material */,
 				691389522DD08DA3002D0506 /* Hitsujichan */,
 			);
 			name = Hitsujichan;
