@@ -79,6 +79,7 @@ class ViewController: UIViewController {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             if let resultViewController = storyboard.instantiateViewController(withIdentifier: "ResultViewController") as? ResultViewController {
                 self.present(resultViewController, animated: true, completion: nil)
+                
             }
         }
         
