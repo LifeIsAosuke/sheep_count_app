@@ -75,7 +75,7 @@ class ViewController: UIViewController {
         number += 1
         label.text = String(number)
         
-        if number == 100 {
+        if number >= 10 {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             if let resultViewController = storyboard.instantiateViewController(withIdentifier: "ResultViewController") as? ResultViewController {
                 self.present(resultViewController, animated: true, completion: nil)
