@@ -142,7 +142,7 @@
         <!--Result View Controller-->
         <scene sceneID="h7P-kK-SPq">
             <objects>
-                <viewController storyboardIdentifier="ResultViewController" id="H1w-sH-rDh" customClass="resultViewController" customModule="Hitsujichan" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ResultViewController" id="H1w-sH-rDh" customClass="ResultViewController" customModule="Hitsujichan" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iHd-b0-udK">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
