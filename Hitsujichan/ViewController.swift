@@ -78,8 +78,8 @@ class ViewController: UIViewController {
         if number >= 10 {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             if let resultViewController = storyboard.instantiateViewController(withIdentifier: "ResultViewController") as? ResultViewController {
+                resultViewController.modalPresentationStyle = .fullScreen
                 self.present(resultViewController, animated: true, completion: nil)
-                
             }
         }
         
