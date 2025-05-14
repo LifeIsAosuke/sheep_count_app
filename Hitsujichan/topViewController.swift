@@ -6,12 +6,16 @@
 //
 
 import UIKit
+import AVFoundation
 
 class topViewController: UIViewController {
     
     @IBOutlet var startButton: UIButton!
     
     @IBOutlet var titleLabel: UIImageView!
+    
+    // スタートボタンが押されたらメーと鳴くよ！！　メ〜メ〜
+    let sheep_soundPlayer = try!AVAudioPlayer(data:NSDataAsset(name:"sheep_sound")!.data)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +34,10 @@ class topViewController: UIViewController {
     }
     
     @IBAction func startButtonTapped(_ sender: UIButton) {
+        
+        // 羊の鳴き声を再生する
+        sheep_soundPlayer.play()
+        
         // Create a circular layer for the animation
         let circleLayer = CAShapeLayer()
         let startPath = UIBezierPath(ovalIn: CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0))
