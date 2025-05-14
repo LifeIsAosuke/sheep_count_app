@@ -20,6 +20,8 @@ class ViewController: UIViewController {
     
     var player: AVAudioPlayer? // ← 音声プレイヤーの変数
     let drumSoundPlayer = try!AVAudioPlayer(data: NSDataAsset (name: "sheep_sound" )!.data)
+    //bgmを追加
+    let bgmPlayer = try!AVAudioPlayer(data: NSDataAsset (name: "朝の訪れ" )!.data)
     
     @IBOutlet var label: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
@@ -44,6 +46,10 @@ class ViewController: UIViewController {
         gradationLayer.bounds.origin.x = contentView.frame.width / 2
         contentView.layer.insertSublayer(gradationLayer, at: 0)
         scrollView.setContentOffset(CGPoint(x: 0, y: stackStartY - self.view.frame.height), animated: false)
+        
+        //bgmを再生
+        bgmPlayer.currentTime = 0
+        bgmPlayer.play()
     }
 
     
@@ -80,6 +86,10 @@ class ViewController: UIViewController {
         label.text = String(number)
         
         if number >= 10 {
+            //bgmを停止
+            bgmPlayer.stop()
+            
+            //終了画面へ遷移
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             if let resultViewController = storyboard.instantiateViewController(withIdentifier: "ResultViewController") as? ResultViewController {
                 resultViewController.modalPresentationStyle = .fullScreen
