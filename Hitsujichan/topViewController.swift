@@ -9,7 +9,9 @@ import UIKit
 
 class topViewController: UIViewController {
     
-//    @IBOutlet var startButton: UIButton!
+    @IBOutlet var startButton: UIButton!
+    
+    @IBOutlet var titleLabel: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,24 +20,20 @@ class topViewController: UIViewController {
 
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        self.startButton.center = self.view.center
-//        UIView.animate(withDuration: 1.0, delay : 0, options : [.curveEaseIn, .autoreverse, .repeat], animations : {
-//            self.startButton.center.y += 10.0
-//        }) { _ in
-//            self.startButton.center.y -= 10.0
-//        }
-//    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        UIView.animate(withDuration: 1.0, delay: 0, options: [.curveEaseIn, .autoreverse, .repeat], animations: {
+            self.titleLabel.transform = CGAffineTransform(translationX: 0, y: 10.0)
+        }) { _ in
+            self.titleLabel.transform = .identity
+        }
     }
-    */
+    
+    @IBAction func startButtonTapped(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil) // Replace "Main" with your storyboard name
+        let viewController = storyboard.instantiateViewController(identifier: "ViewController") // Replace "ViewController" with the appropriate Storyboard ID
+        viewController.modalPresentationStyle = .fullScreen
+        present(viewController, animated: true, completion: nil)
+    }
 
 }
