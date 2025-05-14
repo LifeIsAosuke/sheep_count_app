@@ -9,7 +9,9 @@ import UIKit
 
 class topViewController: UIViewController {
     
-//    @IBOutlet var startButton: UIButton!
+    @IBOutlet var startButton: UIButton!
+    
+    @IBOutlet var titleLabel: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,24 +20,40 @@ class topViewController: UIViewController {
 
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        self.startButton.center = self.view.center
-//        UIView.animate(withDuration: 1.0, delay : 0, options : [.curveEaseIn, .autoreverse, .repeat], animations : {
-//            self.startButton.center.y += 10.0
-//        }) { _ in
-//            self.startButton.center.y -= 10.0
-//        }
-//    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        UIView.animate(withDuration: 1.0, delay: 0, options: [.curveEaseIn, .autoreverse, .repeat], animations: {
+            self.titleLabel.transform = CGAffineTransform(translationX: 0, y: 10.0)
+        }) { _ in
+            self.titleLabel.transform = .identity
+        }
     }
-    */
+    
+    @IBAction func startButtonTapped(_ sender: UIButton) {
+        // Create a circular layer for the animation
+        let circleLayer = CAShapeLayer()
+        let startPath = UIBezierPath(ovalIn: CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0))
+        let endRadius = sqrt(pow(self.view.bounds.width, 2) + pow(self.view.bounds.height, 2))
+        let endPath = UIBezierPath(ovalIn: CGRect(x: self.view.bounds.midX - endRadius, y: self.view.bounds.midY - endRadius, width: endRadius * 2, height: endRadius * 2))
+        
+        circleLayer.path = endPath.cgPath
+        circleLayer.fillColor = UIColor.black.cgColor
+        self.view.layer.addSublayer(circleLayer)
+        
+        // Animate the circle expansion
+        let animation = CABasicAnimation(keyPath: "path")
+        animation.fromValue = startPath.cgPath
+        animation.toValue = endPath.cgPath
+        animation.duration = 2.0 // Increased duration for a slower animation
+        animation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+        circleLayer.add(animation, forKey: "path")
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil) // Replace "Main" with your storyboard name
+            let viewController = storyboard.instantiateViewController(identifier: "ViewController") // Replace "ViewController" with the appropriate Storyboard ID
+            viewController.modalPresentationStyle = .fullScreen
+            self.present(viewController, animated: false, completion: nil)
+        }
+    }
 
 }
