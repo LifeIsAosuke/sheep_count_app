@@ -13,13 +13,15 @@ class ViewController: UIViewController {
     var number: Int = 0
     var sheepStack: [UIImageView] = []
     let sheepSize = CGSize(width: 100, height: 100)
-    let stackStartY: CGFloat = 12000 - 100
+    let stackStartY: CGFloat = 10100
     let stackCenterX: CGFloat = UIScreen.main.bounds.width / 2
     
     let contentView = UIView()
     
     var player: AVAudioPlayer? // ← 音声プレイヤーの変数
     let drumSoundPlayer = try!AVAudioPlayer(data: NSDataAsset (name: "sheep_sound" )!.data)
+    //bgmを追加
+    let bgmPlayer = try!AVAudioPlayer(data: NSDataAsset (name: "朝の訪れ" )!.data)
     
     @IBOutlet var label: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
@@ -31,19 +33,44 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         scrollView.alwaysBounceVertical = true
-        contentView.frame = CGRect(x: 0, y: 0, width: stackCenterX, height: stackStartY) // 高さは十分大きくしておく
+//        scrollView.center.x = self.view.center.x
+        contentView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: stackStartY) //
+//        高さは十分大きくしておく
+        contentView.center.x = self.view.center.x
         scrollView.addSubview(contentView)
         scrollView.contentSize = contentView.frame.size
         //⬇️背景gradationもできるよ（一旦コメントアウト）
         let gradationLayer = CAGradientLayer()
-        gradationLayer.colors = [UIColor.cyan.cgColor,UIColor.blue.cgColor,UIColor.systemIndigo.cgColor,UIColor.black.cgColor]
+        gradationLayer.colors = [UIColor.black.cgColor,UIColor.systemIndigo.cgColor,UIColor.blue.cgColor,UIColor.cyan.cgColor]
         gradationLayer.startPoint = CGPoint(x: 0, y: 1)
         gradationLayer.endPoint = CGPoint(x: 0, y: 0)
         gradationLayer.frame.size = contentView.frame.size
-        gradationLayer.frame.size.width = contentView.frame.width * 2
+        gradationLayer.frame.size.width = contentView.frame.width
         gradationLayer.bounds.origin.x = contentView.frame.width / 2
         contentView.layer.insertSublayer(gradationLayer, at: 0)
         scrollView.setContentOffset(CGPoint(x: 0, y: stackStartY - self.view.frame.height), animated: false)
+        
+        //スタート地点に月の画像を追加
+        let moonUIImageView = UIImageView()
+        moonUIImageView.frame = CGRect(x: 0, y: stackStartY - 300, width: contentView.frame.width * 2, height: 400)
+        moonUIImageView.image = UIImage(named: "moon_surface_clip")
+        moonUIImageView.contentMode = .scaleAspectFit
+        moonUIImageView.center.x = stackCenterX + 100
+        contentView.addSubview(moonUIImageView)
+        
+        //ゴール地点に地球の画像を追加
+        let earthUIImageView = UIImageView()
+        earthUIImageView.frame.size = CGSize(width: contentView.frame.width * 2, height: contentView.frame.width * 2)
+        earthUIImageView.image = UIImage(named: "chikyuu")
+        earthUIImageView.contentMode = .scaleAspectFit
+        earthUIImageView.center = CGPoint(x: self.view.frame.width / 2, y: 0)
+        contentView.addSubview(earthUIImageView)
+        
+        scrollView.setContentOffset(CGPoint(x: 0, y: stackStartY - 200), animated: false)
+        
+        //bgmを再生
+        bgmPlayer.currentTime = 0
+        bgmPlayer.play()
     }
 
     
@@ -62,6 +89,10 @@ class ViewController: UIViewController {
             break
             
         }
+        
+ 
+        
+        
         //羊の音声を再生
         drumSoundPlayer.currentTime = 0
         drumSoundPlayer.play()
@@ -70,7 +101,53 @@ class ViewController: UIViewController {
         let sheepImageView = UIImageView(image: UIImage(named: "hitsuji"))
         sheepImageView.frame.size = sheepSize
         let stackHeight = CGFloat(sheepStack.count) * sheepSize.height
-        sheepImageView.center = CGPoint(x: stackCenterX, y: stackStartY - stackHeight)
+        sheepImageView.center = CGPoint(x: stackCenterX , y: stackStartY - 100 - stackHeight)
+        
+        let chooseInt = Int.random(in: 1...3)
+        if chooseInt == 1{
+            //画像を高度によって変更
+            var thingImage:UIImage?
+            switch number {
+            case 0 ..< 30:
+                thingImage = UIImage(named: "rocket")
+            case 30 ..< 60:
+                thingImage = UIImage(named:"star")
+            case 60 ..< 101:
+                thingImage = UIImage(named:"cloud")
+            default: break
+            }
+            print(thingImage)
+            let grassNumber = Int.random(in: 1...5)
+            let grassImage = {
+                switch grassNumber{
+                case 1:return UIImage(named: "grass1")
+                case 2:return UIImage(named: "grass2")
+                case 3:return UIImage(named: "grass3")
+                case 4:return UIImage(named: "grass4")
+                case 5:return UIImage(named: "grass5")
+                default: break
+                }
+                
+                return UIImage(named: "grass1")
+            }()
+            let flag = Bool.random()
+            let flagDelection = Bool.random()
+            //ものの画像を生成
+            let thingImageView = {
+                if flag{
+                    return UIImageView(image: thingImage)
+                    
+                }else{
+                    return UIImageView(image: grassImage)
+                }
+            }()
+            
+            let checkInt = Int.random(in: 3...6)
+            thingImageView.frame.size = sheepSize
+            let thingStackHeight = stackStartY - CGFloat(sheepStack.count) * sheepSize.height  - CGFloat(100 * checkInt)
+            thingImageView.center = CGPoint(x: (flagDelection ? stackCenterX / 2 : stackCenterX / 2 * 3) , y: thingStackHeight)
+            contentView.addSubview(thingImageView)
+        }
         
         //羊をcontentviewに追加して見えるように
         contentView.addSubview(sheepImageView)
@@ -79,7 +156,10 @@ class ViewController: UIViewController {
         number += 1
         label.text = String(number)
         
-        if number >= 10 {
+        if number >= 100 {
+            //bgmを停止
+            bgmPlayer.stop()
+            //終了画面へ遷移
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             if let resultViewController = storyboard.instantiateViewController(withIdentifier: "ResultViewController") as? ResultViewController {
                 resultViewController.modalPresentationStyle = .fullScreen
@@ -98,7 +178,7 @@ class ViewController: UIViewController {
         let targetOffset = min(max(centerY, 0), maxOffset)
         //⬇️スクロールバーをcontentviewの指定した位置に移動させる
         scrollView.setContentOffset(CGPoint(x: 0, y: targetOffset), animated: true)
-        scrollView.contentInsetAdjustmentBehavior
+//        scrollView.contentInsetAdjustmentBehavior
     }
     
     func playSheepSound() {
