@@ -9,21 +9,20 @@ import UIKit
 
 class ResultViewController: UIViewController {
     
-    @IBOutlet weak var ImageView: UIImageView!
+    @IBOutlet var resutartButton : UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
 
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(backToTop))
-        ImageView.isUserInteractionEnabled = true
-        ImageView.addGestureRecognizer(tapGesture)
     }
     
-    @IBAction func backToTop(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+    @IBAction func resultToTop(){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let topViewController = storyboard.instantiateViewController(withIdentifier: "topViewController") as? topViewController {
+            topViewController.modalPresentationStyle = .fullScreen
+            self.present(topViewController, animated: true, completion: nil)
+        }
     }
-
-   
 }
