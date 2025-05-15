@@ -190,19 +190,51 @@
                     <view key="view" contentMode="scaleToFill" id="iHd-b0-udK">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sky_hiru" translatesAutoresizingMaskIntoConstraints="NO" id="pZt-eC-u3s">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hitsuji" translatesAutoresizingMaskIntoConstraints="NO" id="bm3-bO-LiO">
+                                <rect key="frame" x="76" y="504" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="message1_ohayou" translatesAutoresizingMaskIntoConstraints="NO" id="3u9-Kj-8EW">
+                                <rect key="frame" x="-3" y="169" width="398" height="160"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1AM-bG-dMM">
+                                <rect key="frame" x="77" y="640" width="239" height="153"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="resultToTop" destination="H1w-sH-rDh" eventType="touchUpInside" id="cd3-hu-ZA1"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="restart Button" translatesAutoresizingMaskIntoConstraints="NO" id="1ku-6a-eCs">
+                                <rect key="frame" x="0.0" y="614" width="395" height="238"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Bjf-9d-tAt"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="resutartButton" destination="1AM-bG-dMM" id="Z7Z-Q1-WhX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YrP-wn-Cbq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="218" y="-87"/>
+            <point key="canvasLocation" x="217.55725190839695" y="-87.323943661971839"/>
         </scene>
     </scenes>
     <resources>
         <image name="hitsuji" width="400" height="382"/>
-        <image name="hitsuji_reverse" width="400" height="382"/>
+        <image name="message1_ohayou" width="800" height="182"/>
         <image name="moon_surface_clip" width="200" height="69"/>
+        <image name="restart Button" width="1024" height="1024"/>
+        <image name="sky_hiru" width="205" height="302"/>
         <image name="sky_moon.jpg" width="600" height="338"/>
         <image name="star" width="180" height="179"/>
         <image name="startButton" width="200" height="100"/>
