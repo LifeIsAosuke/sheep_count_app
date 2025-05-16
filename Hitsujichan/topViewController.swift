@@ -43,11 +43,11 @@ class topViewController: UIViewController {
         let startPath = UIBezierPath(ovalIn: CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0))
         let endRadius = sqrt(pow(self.view.bounds.width, 2) + pow(self.view.bounds.height, 2))
         let endPath = UIBezierPath(ovalIn: CGRect(x: self.view.bounds.midX - endRadius, y: self.view.bounds.midY - endRadius, width: endRadius * 2, height: endRadius * 2))
-        
+
         circleLayer.path = endPath.cgPath
         circleLayer.fillColor = UIColor.black.cgColor
         self.view.layer.addSublayer(circleLayer)
-        
+
         // Animate the circle expansion
         let animation = CABasicAnimation(keyPath: "path")
         animation.fromValue = startPath.cgPath
