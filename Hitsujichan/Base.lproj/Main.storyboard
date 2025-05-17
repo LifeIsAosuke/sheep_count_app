@@ -91,10 +91,10 @@
                                     <action selector="startButtonTapped:" destination="B5Y-bZ-dbX" eventType="touchUpInside" id="XAj-rA-peb"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="appTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Fpa-k1-elU">
-                                <rect key="frame" x="0.0" y="251" width="393" height="200"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Fpa-k1-elU">
+                                <rect key="frame" x="45" y="310" width="302" height="196"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="Y8t-AM-O2f"/>
+                                    <constraint firstAttribute="height" constant="196" id="qWS-pU-bXl"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -103,14 +103,14 @@
                         <constraints>
                             <constraint firstItem="C8t-Fn-QrB" firstAttribute="top" secondItem="ZeT-Du-DDw" secondAttribute="top" id="2lG-aI-nKu"/>
                             <constraint firstItem="1DC-3f-o3n" firstAttribute="trailing" secondItem="301-4U-Mku" secondAttribute="trailing" constant="16" id="BP3-e7-XC1"/>
-                            <constraint firstItem="Fpa-k1-elU" firstAttribute="top" secondItem="1DC-3f-o3n" secondAttribute="top" constant="50" id="C1s-nf-csx"/>
                             <constraint firstItem="C8t-Fn-QrB" firstAttribute="leading" secondItem="1DC-3f-o3n" secondAttribute="leading" id="Ym8-jM-aMl"/>
+                            <constraint firstItem="Fpa-k1-elU" firstAttribute="leading" secondItem="1DC-3f-o3n" secondAttribute="leading" constant="45" id="Ymb-zG-1Q6"/>
                             <constraint firstAttribute="trailing" secondItem="C8t-Fn-QrB" secondAttribute="trailing" id="c3U-1J-Isj"/>
                             <constraint firstAttribute="bottom" secondItem="301-4U-Mku" secondAttribute="bottom" constant="52" id="chK-FW-Egj"/>
-                            <constraint firstItem="Fpa-k1-elU" firstAttribute="leading" secondItem="1DC-3f-o3n" secondAttribute="leading" id="gjk-ei-hLP"/>
                             <constraint firstItem="301-4U-Mku" firstAttribute="leading" secondItem="1DC-3f-o3n" secondAttribute="leading" constant="16" id="jQv-iP-IFz"/>
                             <constraint firstAttribute="bottom" secondItem="C8t-Fn-QrB" secondAttribute="bottom" id="oFS-nr-vCs"/>
-                            <constraint firstItem="Fpa-k1-elU" firstAttribute="trailing" secondItem="1DC-3f-o3n" secondAttribute="trailing" id="u6c-cd-Fd9"/>
+                            <constraint firstItem="1DC-3f-o3n" firstAttribute="trailing" secondItem="Fpa-k1-elU" secondAttribute="trailing" constant="46" id="tmA-1S-5xZ"/>
+                            <constraint firstItem="Fpa-k1-elU" firstAttribute="top" secondItem="1DC-3f-o3n" secondAttribute="top" constant="192" id="uMG-Bm-i5I"/>
                         </constraints>
                     </view>
                     <connections>
