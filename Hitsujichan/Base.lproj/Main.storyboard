@@ -69,74 +69,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sky_moon.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="C8t-Fn-QrB">
-                                <rect key="frame" x="0.0" y="0.0" width="519" height="852"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="topBackground" translatesAutoresizingMaskIntoConstraints="NO" id="PqL-YY-Pub">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="ikc-zM-S5R">
-                                <rect key="frame" x="205" y="41" width="145" height="69"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appTitle" translatesAutoresizingMaskIntoConstraints="NO" id="xkS-nY-j1R">
+                                <rect key="frame" x="20" y="231" width="353" height="206"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="206" id="rbS-Y0-63J"/>
+                                </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="dAk-VA-huB">
-                                <rect key="frame" x="-20" y="63" width="94" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="BQ0-lr-Nna">
-                                <rect key="frame" x="241" y="216" width="109" height="27"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="TYO-NN-mGx">
-                                <rect key="frame" x="0.0" y="105" width="124" height="43"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="ycb-qp-HWB">
-                                <rect key="frame" x="301" y="118" width="115" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="アプリ名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HsF-5k-Rz9">
-                                <rect key="frame" x="102" y="231" width="188" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="moon_surface_clip" translatesAutoresizingMaskIntoConstraints="NO" id="JM4-EN-hRM">
-                                <rect key="frame" x="0.0" y="601" width="460" height="251"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hitsuji" translatesAutoresizingMaskIntoConstraints="NO" id="9xO-Bl-pbu">
-                                <rect key="frame" x="195" y="535" width="244" height="124"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="301-4U-Mku">
-                                <rect key="frame" x="0.0" y="711" width="393" height="89"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" enabled="NO" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="301-4U-Mku">
+                                <rect key="frame" x="39" y="722" width="316" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="2D4-dL-C4D"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="393" maxX="100" maxY="0.0"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain"/>
+                                <buttonConfiguration key="configuration" style="plain" image="startButton 1">
+                                    <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="startButtonTapped:" destination="B5Y-bZ-dbX" eventType="touchUpInside" id="XAj-rA-peb"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="startButton" translatesAutoresizingMaskIntoConstraints="NO" id="Fpa-k1-elU">
-                                <rect key="frame" x="78" y="686" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hitsuji_reverse" translatesAutoresizingMaskIntoConstraints="NO" id="Xho-B0-P4U">
-                                <rect key="frame" x="-42" y="573" width="209" height="117"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1DC-3f-o3n"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1DC-3f-o3n" firstAttribute="trailing" secondItem="301-4U-Mku" secondAttribute="trailing" constant="38" id="5wK-hO-Akn"/>
+                            <constraint firstItem="xkS-nY-j1R" firstAttribute="leading" secondItem="1DC-3f-o3n" secondAttribute="leading" constant="20" id="EBt-Jn-1v6"/>
+                            <constraint firstItem="301-4U-Mku" firstAttribute="leading" secondItem="1DC-3f-o3n" secondAttribute="leading" constant="39" id="IGy-cd-8Ei"/>
+                            <constraint firstAttribute="bottom" secondItem="PqL-YY-Pub" secondAttribute="bottom" id="JSf-pZ-NG7"/>
+                            <constraint firstItem="PqL-YY-Pub" firstAttribute="trailing" secondItem="1DC-3f-o3n" secondAttribute="trailing" id="Jnc-w7-cGE"/>
+                            <constraint firstItem="PqL-YY-Pub" firstAttribute="leading" secondItem="1DC-3f-o3n" secondAttribute="leading" id="dnv-Qh-SAo"/>
+                            <constraint firstItem="PqL-YY-Pub" firstAttribute="top" secondItem="ZeT-Du-DDw" secondAttribute="top" id="ftP-zm-m4u"/>
+                            <constraint firstAttribute="bottom" secondItem="301-4U-Mku" secondAttribute="bottom" constant="30" id="oQt-Qe-NHs"/>
+                            <constraint firstItem="xkS-nY-j1R" firstAttribute="top" secondItem="1DC-3f-o3n" secondAttribute="top" constant="113" id="sL8-XO-185"/>
+                            <constraint firstItem="1DC-3f-o3n" firstAttribute="trailing" secondItem="xkS-nY-j1R" secondAttribute="trailing" constant="20" id="yPf-gI-bRa"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="startButton" destination="301-4U-Mku" id="e8y-Dm-gSH"/>
-                        <outlet property="titleLabel" destination="Fpa-k1-elU" id="X4r-oP-mL0"/>
+                        <outlet property="titleLabel" destination="xkS-nY-j1R" id="3Ha-Zs-vsm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8mX-ER-Onl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1547.3282442748091" y="-87.323943661971839"/>
+            <point key="canvasLocation" x="-1547.8260869565217" y="-87.723214285714278"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="vDd-JL-gAh">
@@ -165,7 +144,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vf0-CJ-bfn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1434" y="649"/>
+            <point key="canvasLocation" x="-1258" y="660"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nOt-Aq-ge1">
@@ -191,17 +170,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sky_hiru" translatesAutoresizingMaskIntoConstraints="NO" id="pZt-eC-u3s">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hitsuji" translatesAutoresizingMaskIntoConstraints="NO" id="bm3-bO-LiO">
-                                <rect key="frame" x="76" y="504" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="message1_ohayou" translatesAutoresizingMaskIntoConstraints="NO" id="3u9-Kj-8EW">
-                                <rect key="frame" x="-3" y="169" width="398" height="160"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="result_background" translatesAutoresizingMaskIntoConstraints="NO" id="QeG-15-b7I">
+                                <rect key="frame" x="1" y="1" width="393" height="850"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1AM-bG-dMM">
                                 <rect key="frame" x="77" y="640" width="239" height="153"/>
@@ -213,36 +183,62 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="restart Button" translatesAutoresizingMaskIntoConstraints="NO" id="1ku-6a-eCs">
-                                <rect key="frame" x="0.0" y="614" width="395" height="238"/>
+                                <rect key="frame" x="11" y="664" width="395" height="212"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hitsuji" translatesAutoresizingMaskIntoConstraints="NO" id="bm3-bO-LiO">
+                                <rect key="frame" x="77" y="564" width="400" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rUn-wL-Caq">
+                                <rect key="frame" x="57" y="392" width="279" height="120"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="0.41429532284768211" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="y9b-78-62a"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="5" height="-5"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Bjf-9d-tAt"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="rUn-wL-Caq" firstAttribute="leading" secondItem="Bjf-9d-tAt" secondAttribute="leading" constant="57" id="3Fi-Ny-wSV"/>
+                            <constraint firstItem="Bjf-9d-tAt" firstAttribute="trailing" secondItem="rUn-wL-Caq" secondAttribute="trailing" constant="57" id="5iY-dd-vfW"/>
+                            <constraint firstItem="rUn-wL-Caq" firstAttribute="leading" secondItem="Bjf-9d-tAt" secondAttribute="leading" constant="57" id="E9K-fV-0Wm"/>
+                            <constraint firstAttribute="bottom" secondItem="QeG-15-b7I" secondAttribute="bottom" constant="1" id="GLM-wh-UM1"/>
+                            <constraint firstItem="QeG-15-b7I" firstAttribute="leading" secondItem="Bjf-9d-tAt" secondAttribute="leading" constant="1" id="RdR-Jc-j1S"/>
+                            <constraint firstItem="QeG-15-b7I" firstAttribute="top" secondItem="iHd-b0-udK" secondAttribute="top" constant="1" id="TNn-Rr-dJ2"/>
+                            <constraint firstItem="rUn-wL-Caq" firstAttribute="top" secondItem="Bjf-9d-tAt" secondAttribute="top" constant="274" id="XoM-8j-sLb"/>
+                            <constraint firstItem="Bjf-9d-tAt" firstAttribute="trailing" secondItem="rUn-wL-Caq" secondAttribute="trailing" constant="57" id="icd-FQ-nsT"/>
+                            <constraint firstItem="QeG-15-b7I" firstAttribute="trailing" secondItem="Bjf-9d-tAt" secondAttribute="trailing" constant="1" id="qXu-3L-Sea"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="advice" destination="rUn-wL-Caq" id="gJV-4X-hZG"/>
                         <outlet property="resutartButton" destination="1AM-bG-dMM" id="Z7Z-Q1-WhX"/>
+                        <outlet property="sheep" destination="bm3-bO-LiO" id="Xp5-Fg-Vk4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YrP-wn-Cbq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="217.55725190839695" y="-87.323943661971839"/>
+            <point key="canvasLocation" x="215.94202898550725" y="-88.392857142857139"/>
         </scene>
     </scenes>
     <resources>
+        <image name="appTitle" width="302" height="196"/>
         <image name="hitsuji" width="400" height="382"/>
-        <image name="message1_ohayou" width="800" height="182"/>
-        <image name="moon_surface_clip" width="200" height="69"/>
         <image name="restart Button" width="1024" height="1024"/>
-        <image name="sky_hiru" width="205" height="302"/>
-        <image name="sky_moon.jpg" width="600" height="338"/>
-        <image name="star" width="180" height="179"/>
-        <image name="startButton" width="200" height="100"/>
+        <image name="result_background" width="375" height="812"/>
+        <image name="startButton 1" width="337" height="66"/>
+        <image name="topBackground" width="375" height="812"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemCyanColor">
-            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.1960784314" green="0.67843137249999996" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
