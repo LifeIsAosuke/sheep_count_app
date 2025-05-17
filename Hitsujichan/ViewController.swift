@@ -168,7 +168,7 @@ class ViewController: UIViewController {
         number += 1
         label.text = String(number)
         
-        if number >= 100 {
+        if number >= 10 {
             //bgmを停止
             bgmPlayer.stop()
             //終了画面へ遷移
@@ -279,5 +279,5 @@ class TestView: UIView {
             testText.trailingAnchor.constraint(equalTo: self.outline.trailingAnchor, constant: -20),
         ])
     }
-    
+    // テストtestどうですか
 }
