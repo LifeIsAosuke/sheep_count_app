@@ -66,6 +66,14 @@ class ViewController: UIViewController {
         earthUIImageView.center = CGPoint(x: self.view.frame.width / 2, y: 0)
         contentView.addSubview(earthUIImageView)
         
+        //ゴール地点にハシゴの画像を追加
+        let hasigoUIImageView = UIImageView()
+        hasigoUIImageView.frame.size = CGSize(width: contentView.frame.width , height: contentView.frame.width )
+        hasigoUIImageView.image = UIImage(named: "hashigo")
+        hasigoUIImageView.contentMode = .scaleAspectFit
+        hasigoUIImageView.center = CGPoint(x: stackCenterX, y: stackCenterX * 3 + 100)
+        contentView.addSubview(hasigoUIImageView)
+        
         scrollView.setContentOffset(CGPoint(x: 0, y: contentView.frame.height - scrollView.frame.height + 50), animated: false)
         
         //bgmを再生
@@ -103,7 +111,7 @@ class ViewController: UIViewController {
         let stackHeight = CGFloat(sheepStack.count) * sheepSize.height
         sheepImageView.center = CGPoint(x: stackCenterX , y: stackStartY - 100 - stackHeight)
         
-        let chooseInt = Int.random(in: 1...3)
+        let chooseInt = Int.random(in: 1...2)
         if chooseInt == 1{
             //画像を高度によって変更
             var thingImage:UIImage?
