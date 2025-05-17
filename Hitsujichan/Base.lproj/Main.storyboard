@@ -72,12 +72,6 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="topBackground" translatesAutoresizingMaskIntoConstraints="NO" id="C8t-Fn-QrB">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Fpa-k1-elU">
-                                <rect key="frame" x="34" y="250" width="317" height="162"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="162" id="dFQ-JU-o6z"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="301-4U-Mku">
                                 <rect key="frame" x="16" y="711" width="361" height="89"/>
                                 <constraints>
@@ -89,6 +83,12 @@
                                     <action selector="startButtonTapped:" destination="B5Y-bZ-dbX" eventType="touchUpInside" id="XAj-rA-peb"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Fpa-k1-elU">
+                                <rect key="frame" x="34" y="250" width="317" height="162"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="162" id="dFQ-JU-o6z"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1DC-3f-o3n"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -187,6 +187,7 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0fQ-Pb-hjO">
                                 <rect key="frame" x="72" y="347" width="250" height="100"/>
+                                <color key="backgroundColor" red="0.73725490199999999" green="0.73639458420000004" blue="0.73639458420000004" alpha="0.37518108443708609" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="YhM-zj-70U"/>
                                 </constraints>

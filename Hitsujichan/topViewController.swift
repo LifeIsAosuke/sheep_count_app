@@ -21,7 +21,7 @@ class topViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        
+//        startButton.isUserInteractionEnabled = true
 //        startBlinkingAnimation(for: startButton)
     }
     
@@ -63,11 +63,10 @@ class topViewController: UIViewController {
             viewController.modalPresentationStyle = .fullScreen
             self.present(viewController, animated: false, completion: nil)
         }
-        
-        // コミット用テストメッセージ
     }
     
 }
+
 // ボタンをチカチカ点灯させるメソッド
 //func startBlinkingAnimation(for button: UIButton) {
 //    UIView.animate(withDuration: 1,
@@ -77,5 +76,7 @@ class topViewController: UIViewController {
 //        button.alpha = 0.5 // Adjust transparency to create a blinking effect
 //    },
 //                   completion: nil)
+//
+//    // Ensure the button remains tappable
+//    button.isUserInteractionEnabled = true
 //}
-
