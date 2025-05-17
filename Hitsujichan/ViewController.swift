@@ -23,6 +23,9 @@ class ViewController: UIViewController {
     //bgmを追加
     let bgmPlayer = try!AVAudioPlayer(data: NSDataAsset (name: "朝の訪れ" )!.data)
     
+    // タップラベル
+    @IBOutlet var tapLabel: UILabel!
+    
     @IBOutlet var label: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     //    @IBOutlet var stackView:UIStackView!
@@ -31,6 +34,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // タップ表示が改行されるように
+        tapLabel.numberOfLines = 0
         
         scrollView.alwaysBounceVertical = true
 //        scrollView.center.x = self.view.center.x
@@ -79,6 +85,8 @@ class ViewController: UIViewController {
         //bgmを再生
         bgmPlayer.currentTime = 0
         bgmPlayer.play()
+        
+        startBlinkingAnimation(for: tapLabel)
     }
 
     
@@ -195,16 +203,35 @@ class ViewController: UIViewController {
         number += 1
         label.text = String(number)
         
-        if number >= 100 {
+        if number >= 10 {
             //bgmを停止
             bgmPlayer.stop()
             //終了画面へ遷移
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            if let resultViewController = storyboard.instantiateViewController(withIdentifier: "ResultViewController") as? ResultViewController {
+            let circleLayer = CAShapeLayer()
+            let startPath = UIBezierPath(ovalIn: CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0))
+            let endRadius = sqrt(pow(self.view.bounds.width, 2) + pow(self.view.bounds.height, 2))
+            let endPath = UIBezierPath(ovalIn: CGRect(x: self.view.bounds.midX - endRadius, y: self.view.bounds.midY - endRadius, width: endRadius * 2, height: endRadius * 2))
+            
+            circleLayer.path = endPath.cgPath
+            circleLayer.fillColor = UIColor.white.cgColor
+            self.view.layer.addSublayer(circleLayer)
+            
+            // Animate the circle expansion
+            let animation = CABasicAnimation(keyPath: "path")
+            animation.fromValue = startPath.cgPath
+            animation.toValue = endPath.cgPath
+            animation.duration = 2.0 // Increased duration for a slower animation
+            animation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+            circleLayer.add(animation, forKey: "path")
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil) // Replace "Main" with your storyboard name
+                let resultViewController = storyboard.instantiateViewController(identifier: "ResultViewController")
                 resultViewController.modalPresentationStyle = .fullScreen
-                self.present(resultViewController, animated: true, completion: nil)
+                self.present(resultViewController, animated: false, completion: nil)
             }
         }
+
         
         //最も高い羊が画面中央に来るようにするコード
         //⬇️新しく追加した羊のcontentviewにおける高さ(originは中央の値)
@@ -232,6 +259,16 @@ class ViewController: UIViewController {
         } catch {
             print("音声の再生に失敗しました: \(error.localizedDescription)")
         }
+    }
+    
+    func startBlinkingAnimation(for label: UILabel) {
+        UIView.animate(withDuration: 1,
+                       delay: 0,
+                       options: [.repeat, .autoreverse],
+                       animations: {
+            label.alpha = 0.5 // Change transparency for blinking effect
+        },
+                       completion: nil)
     }
 }
 
@@ -306,5 +343,4 @@ class TestView: UIView {
             testText.trailingAnchor.constraint(equalTo: self.outline.trailingAnchor, constant: -20),
         ])
     }
-    // テストtestどうですか
 }
