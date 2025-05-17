@@ -80,13 +80,17 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="topBackground" translatesAutoresizingMaskIntoConstraints="NO" id="C8t-Fn-QrB">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="startButton 1" translatesAutoresizingMaskIntoConstraints="NO" id="1Zd-x8-eMG">
+                                <rect key="frame" x="45" y="711" width="302" height="73"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="301-4U-Mku">
                                 <rect key="frame" x="16" y="711" width="361" height="89"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="89" id="LbE-SD-I6Y"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="startButton 1"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
                                 <connections>
                                     <action selector="startButtonTapped:" destination="B5Y-bZ-dbX" eventType="touchUpInside" id="XAj-rA-peb"/>
                                 </connections>
@@ -114,6 +118,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="buttonLabel" destination="1Zd-x8-eMG" id="I7u-hX-vb0"/>
                         <outlet property="startButton" destination="301-4U-Mku" id="e8y-Dm-gSH"/>
                         <outlet property="titleLabel" destination="Fpa-k1-elU" id="X4r-oP-mL0"/>
                     </connections>
