@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="B5Y-bZ-dbX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
@@ -86,7 +86,9 @@
                                     <constraint firstAttribute="height" constant="89" id="LbE-SD-I6Y"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain"/>
+                                <buttonConfiguration key="configuration" style="plain" image="startButton 1">
+                                    <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="startButtonTapped:" destination="B5Y-bZ-dbX" eventType="touchUpInside" id="XAj-rA-peb"/>
                                 </connections>
@@ -129,12 +131,12 @@
                     <connections>
                         <outlet property="buttonLabel" destination="1Zd-x8-eMG" id="I7u-hX-vb0"/>
                         <outlet property="startButton" destination="301-4U-Mku" id="e8y-Dm-gSH"/>
-                        <outlet property="titleLabel" destination="Fpa-k1-elU" id="X4r-oP-mL0"/>
+                        <outlet property="titleLabel" destination="xkS-nY-j1R" id="3Ha-Zs-vsm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8mX-ER-Onl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1547.3282442748091" y="-87.323943661971839"/>
+            <point key="canvasLocation" x="-1547.8260869565217" y="-87.723214285714278"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="vDd-JL-gAh">
@@ -153,7 +155,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vf0-CJ-bfn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1434" y="649"/>
+            <point key="canvasLocation" x="-1258" y="660"/>
         </scene>
         <!--Result View Controller-->
         <scene sceneID="h7P-kK-SPq">
@@ -198,6 +200,17 @@
                                     <constraint firstAttribute="height" constant="238" id="tFY-tf-xFs"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rUn-wL-Caq">
+                                <rect key="frame" x="57" y="392" width="279" height="120"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="0.41429532284768211" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="y9b-78-62a"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="5" height="-5"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Bjf-9d-tAt"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -228,7 +241,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YrP-wn-Cbq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="217.55725190839695" y="-87.323943661971839"/>
+            <point key="canvasLocation" x="215.94202898550725" y="-88.392857142857139"/>
         </scene>
     </scenes>
     <resources>

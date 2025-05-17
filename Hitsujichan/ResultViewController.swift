@@ -14,17 +14,14 @@ class ResultViewController: UIViewController {
     
     @IBOutlet var sheep: UIImageView!
     
-    @IBOutlet var advice: UILabel!
-    
+    @IBOutlet var advice: UILabel! 
     let musicPlayer = try!AVAudioPlayer(data:NSDataAsset(name:"成功音")!.data)
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
         
         musicPlayer.play()
-        
         // 画面呼び出し時にランダムに励ましの言葉を表示
         let message = getEncouragementMessage()
         advice.text = message
@@ -67,7 +64,6 @@ class ResultViewController: UIViewController {
     func getEncouragementMessage() -> String {
         // ランダムな数字を生成
         let randomNumber = Int.random(in: 1...10)
-        
         // ランダムなメッセージを選ぶ
         switch randomNumber {
         case 1:
@@ -95,5 +91,3 @@ class ResultViewController: UIViewController {
         }
     }
 }
-
-
