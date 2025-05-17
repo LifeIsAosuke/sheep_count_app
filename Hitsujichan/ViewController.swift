@@ -23,6 +23,9 @@ class ViewController: UIViewController {
     //bgmを追加
     let bgmPlayer = try!AVAudioPlayer(data: NSDataAsset (name: "朝の訪れ" )!.data)
     
+    // タップラベル
+    @IBOutlet var tapLabel: UILabel!
+    
     @IBOutlet var label: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     //    @IBOutlet var stackView:UIStackView!
@@ -31,6 +34,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // タップ表示が改行されるように
+        tapLabel.numberOfLines = 0
         
         scrollView.alwaysBounceVertical = true
 //        scrollView.center.x = self.view.center.x
@@ -71,6 +77,8 @@ class ViewController: UIViewController {
         //bgmを再生
         bgmPlayer.currentTime = 0
         bgmPlayer.play()
+        
+        startBlinkingAnimation(for: tapLabel)
     }
 
     
@@ -194,6 +202,16 @@ class ViewController: UIViewController {
             print("音声の再生に失敗しました: \(error.localizedDescription)")
         }
     }
+    
+    func startBlinkingAnimation(for label: UILabel) {
+        UIView.animate(withDuration: 1,
+                       delay: 0,
+                       options: [.repeat, .autoreverse],
+                       animations: {
+            label.alpha = 0.5 // Change transparency for blinking effect
+        },
+                       completion: nil)
+    }
 }
 
 class TestView: UIView {
@@ -267,6 +285,4 @@ class TestView: UIView {
             testText.trailingAnchor.constraint(equalTo: self.outline.trailingAnchor, constant: -20),
         ])
     }
-    // テストtestどうですか
 }
-

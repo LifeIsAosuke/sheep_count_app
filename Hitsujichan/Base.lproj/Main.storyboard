@@ -41,6 +41,13 @@
                                     <action selector="plus" destination="BYZ-38-t0r" eventType="touchUpInside" id="9q1-jX-e6M"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="タップしてね！" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pd9-NI-QLn">
+                                <rect key="frame" x="259" y="663" width="103" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemCyanColor"/>
@@ -55,11 +62,12 @@
                     <connections>
                         <outlet property="label" destination="AKU-bn-Y2G" id="OUM-BX-hhK"/>
                         <outlet property="scrollView" destination="6Lf-xV-fyw" id="BLz-QZ-xJS"/>
+                        <outlet property="tapLabel" destination="pd9-NI-QLn" id="NJa-gJ-cQj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-677" y="-87"/>
+            <point key="canvasLocation" x="-677.0992366412213" y="-87.323943661971839"/>
         </scene>
         <!--Top View Controller-->
         <scene sceneID="yIq-4j-Mha">
@@ -83,10 +91,10 @@
                                     <action selector="startButtonTapped:" destination="B5Y-bZ-dbX" eventType="touchUpInside" id="XAj-rA-peb"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Fpa-k1-elU">
-                                <rect key="frame" x="34" y="250" width="317" height="162"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="appTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Fpa-k1-elU">
+                                <rect key="frame" x="0.0" y="251" width="393" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="162" id="dFQ-JU-o6z"/>
+                                    <constraint firstAttribute="height" constant="200" id="Y8t-AM-O2f"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -95,14 +103,14 @@
                         <constraints>
                             <constraint firstItem="C8t-Fn-QrB" firstAttribute="top" secondItem="ZeT-Du-DDw" secondAttribute="top" id="2lG-aI-nKu"/>
                             <constraint firstItem="1DC-3f-o3n" firstAttribute="trailing" secondItem="301-4U-Mku" secondAttribute="trailing" constant="16" id="BP3-e7-XC1"/>
-                            <constraint firstItem="Fpa-k1-elU" firstAttribute="leading" secondItem="1DC-3f-o3n" secondAttribute="leading" constant="34" id="J2X-Pc-V7c"/>
-                            <constraint firstItem="Fpa-k1-elU" firstAttribute="top" secondItem="1DC-3f-o3n" secondAttribute="top" constant="132" id="L5z-r9-rWZ"/>
-                            <constraint firstItem="1DC-3f-o3n" firstAttribute="trailing" secondItem="Fpa-k1-elU" secondAttribute="trailing" constant="42" id="Ocn-64-oeK"/>
+                            <constraint firstItem="Fpa-k1-elU" firstAttribute="top" secondItem="1DC-3f-o3n" secondAttribute="top" constant="50" id="C1s-nf-csx"/>
                             <constraint firstItem="C8t-Fn-QrB" firstAttribute="leading" secondItem="1DC-3f-o3n" secondAttribute="leading" id="Ym8-jM-aMl"/>
                             <constraint firstAttribute="trailing" secondItem="C8t-Fn-QrB" secondAttribute="trailing" id="c3U-1J-Isj"/>
                             <constraint firstAttribute="bottom" secondItem="301-4U-Mku" secondAttribute="bottom" constant="52" id="chK-FW-Egj"/>
+                            <constraint firstItem="Fpa-k1-elU" firstAttribute="leading" secondItem="1DC-3f-o3n" secondAttribute="leading" id="gjk-ei-hLP"/>
                             <constraint firstItem="301-4U-Mku" firstAttribute="leading" secondItem="1DC-3f-o3n" secondAttribute="leading" constant="16" id="jQv-iP-IFz"/>
                             <constraint firstAttribute="bottom" secondItem="C8t-Fn-QrB" secondAttribute="bottom" id="oFS-nr-vCs"/>
+                            <constraint firstItem="Fpa-k1-elU" firstAttribute="trailing" secondItem="1DC-3f-o3n" secondAttribute="trailing" id="u6c-cd-Fd9"/>
                         </constraints>
                     </view>
                     <connections>
@@ -185,13 +193,13 @@
                                     <constraint firstAttribute="height" constant="238" id="5eO-gj-UXU"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0fQ-Pb-hjO">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="あどばいす" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0fQ-Pb-hjO">
                                 <rect key="frame" x="72" y="347" width="250" height="100"/>
                                 <color key="backgroundColor" red="0.73725490199999999" green="0.73639458420000004" blue="0.73639458420000004" alpha="0.37518108443708609" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="YhM-zj-70U"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
