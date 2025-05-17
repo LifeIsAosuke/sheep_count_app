@@ -138,7 +138,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vf0-CJ-bfn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1434" y="649"/>
+            <point key="canvasLocation" x="-1258" y="660"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nOt-Aq-ge1">
@@ -176,32 +176,43 @@
                                     <action selector="resultToTop" destination="H1w-sH-rDh" eventType="touchUpInside" id="cd3-hu-ZA1"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hitsuji" translatesAutoresizingMaskIntoConstraints="NO" id="bm3-bO-LiO">
-                                <rect key="frame" x="77" y="564" width="400" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="restart Button" translatesAutoresizingMaskIntoConstraints="NO" id="1ku-6a-eCs">
                                 <rect key="frame" x="11" y="664" width="395" height="212"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hitsuji" translatesAutoresizingMaskIntoConstraints="NO" id="bm3-bO-LiO">
+                                <rect key="frame" x="77" y="564" width="400" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rUn-wL-Caq">
+                                <rect key="frame" x="57" y="348" width="300" height="120"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="5" height="-5"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Bjf-9d-tAt"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="rUn-wL-Caq" firstAttribute="leading" secondItem="Bjf-9d-tAt" secondAttribute="leading" constant="57" id="3Fi-Ny-wSV"/>
+                            <constraint firstItem="Bjf-9d-tAt" firstAttribute="trailing" secondItem="rUn-wL-Caq" secondAttribute="trailing" constant="57" id="5iY-dd-vfW"/>
                             <constraint firstAttribute="bottom" secondItem="QeG-15-b7I" secondAttribute="bottom" constant="1" id="GLM-wh-UM1"/>
+                            <constraint firstItem="rUn-wL-Caq" firstAttribute="top" secondItem="Bjf-9d-tAt" secondAttribute="top" constant="252" id="Qnh-0S-jrT"/>
                             <constraint firstItem="QeG-15-b7I" firstAttribute="leading" secondItem="Bjf-9d-tAt" secondAttribute="leading" constant="1" id="RdR-Jc-j1S"/>
                             <constraint firstItem="QeG-15-b7I" firstAttribute="top" secondItem="iHd-b0-udK" secondAttribute="top" constant="1" id="TNn-Rr-dJ2"/>
                             <constraint firstItem="QeG-15-b7I" firstAttribute="trailing" secondItem="Bjf-9d-tAt" secondAttribute="trailing" constant="1" id="qXu-3L-Sea"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="advice" destination="rUn-wL-Caq" id="gJV-4X-hZG"/>
                         <outlet property="resutartButton" destination="1AM-bG-dMM" id="Z7Z-Q1-WhX"/>
                         <outlet property="sheep" destination="bm3-bO-LiO" id="Xp5-Fg-Vk4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YrP-wn-Cbq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="216.03053435114504" y="-88.028169014084511"/>
+            <point key="canvasLocation" x="215.94202898550725" y="-88.392857142857139"/>
         </scene>
     </scenes>
     <resources>
