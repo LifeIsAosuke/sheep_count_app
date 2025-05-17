@@ -14,17 +14,15 @@ class topViewController: UIViewController {
     
     @IBOutlet var titleLabel: UIImageView!
     
-    @IBOutlet var buttonLabel: UIImageView!
-    
     // スタートボタンが押されたらメーと鳴くよ！！　メ〜メ〜
     let sheep_soundPlayer = try!AVAudioPlayer(data:NSDataAsset(name:"sheep_sound")!.data)
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Do any additional setup after loading the view.
-        startButton.isUserInteractionEnabled = true
-        startBlinkingAnimation(for: buttonLabel)
+
+        startBlinkingAnimation(for: startButton)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -65,21 +63,10 @@ class topViewController: UIViewController {
             viewController.modalPresentationStyle = .fullScreen
             self.present(viewController, animated: false, completion: nil)
         }
+        
+        // コミット用テストメッセージ
     }
-}
-
-// ボタンをチカチカ点灯させるメソッド
-func startBlinkingAnimation(for button: UIImageView) {
-    UIView.animate(withDuration: 1,
-                   delay: 0,
-                   options: [.repeat, .autoreverse],
-                   animations: {
-        button.alpha = 0.5 // Adjust transparency to create a blinking effect
-    },
-                   completion: nil)
-
-    // Ensure the button remains tappable
-    button.isUserInteractionEnabled = true
+    
 }
     // ボタンをチカチカ点灯させるメソッド
     func startBlinkingAnimation(for button: UIButton) {
