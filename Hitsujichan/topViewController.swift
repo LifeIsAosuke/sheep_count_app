@@ -22,7 +22,7 @@ class topViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         
-        startBlinkingAnimation(for: startButton)
+//        startBlinkingAnimation(for: startButton)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -69,13 +69,13 @@ class topViewController: UIViewController {
     
 }
 // ボタンをチカチカ点灯させるメソッド
-func startBlinkingAnimation(for button: UIButton) {
-    UIView.animate(withDuration: 1,
-                   delay: 0,
-                   options: [.repeat, .autoreverse],
-                   animations: {
-        button.alpha = 0.5 // Adjust transparency to create a blinking effect
-    },
-                   completion: nil)
-}
+//func startBlinkingAnimation(for button: UIButton) {
+//    UIView.animate(withDuration: 1,
+//                   delay: 0,
+//                   options: [.repeat, .autoreverse],
+//                   animations: {
+//        button.alpha = 0.5 // Adjust transparency to create a blinking effect
+//    },
+//                   completion: nil)
+//}
 
