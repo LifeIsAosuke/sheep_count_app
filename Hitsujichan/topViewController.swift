@@ -16,12 +16,13 @@ class topViewController: UIViewController {
     
     // スタートボタンが押されたらメーと鳴くよ！！　メ〜メ〜
     let sheep_soundPlayer = try!AVAudioPlayer(data:NSDataAsset(name:"sheep_sound")!.data)
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
-
+        
+        startBlinkingAnimation(for: startButton)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -65,5 +66,16 @@ class topViewController: UIViewController {
         
         // コミット用テストメッセージ
     }
-
+    
 }
+// ボタンをチカチカ点灯させるメソッド
+func startBlinkingAnimation(for button: UIButton) {
+    UIView.animate(withDuration: 1,
+                   delay: 0,
+                   options: [.repeat, .autoreverse],
+                   animations: {
+        button.alpha = 0.5 // Adjust transparency to create a blinking effect
+    },
+                   completion: nil)
+}
+
