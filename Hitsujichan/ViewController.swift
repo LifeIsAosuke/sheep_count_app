@@ -48,7 +48,7 @@ class ViewController: UIViewController {
         gradationLayer.frame.size.width = contentView.frame.width
         gradationLayer.bounds.origin.x = contentView.frame.width / 2
         contentView.layer.insertSublayer(gradationLayer, at: 0)
-        scrollView.setContentOffset(CGPoint(x: 0, y: stackStartY - self.view.frame.height), animated: false)
+        
         
         //スタート地点に月の画像を追加
         let moonUIImageView = UIImageView()
@@ -66,7 +66,15 @@ class ViewController: UIViewController {
         earthUIImageView.center = CGPoint(x: self.view.frame.width / 2, y: 0)
         contentView.addSubview(earthUIImageView)
         
-        scrollView.setContentOffset(CGPoint(x: 0, y: stackStartY - 200), animated: false)
+        //ゴール地点にハシゴの画像を追加
+        let hasigoUIImageView = UIImageView()
+        hasigoUIImageView.frame.size = CGSize(width: contentView.frame.width , height: contentView.frame.width )
+        hasigoUIImageView.image = UIImage(named: "hashigo")
+        hasigoUIImageView.contentMode = .scaleAspectFit
+        hasigoUIImageView.center = CGPoint(x: stackCenterX, y: stackCenterX * 3 + 100)
+        contentView.addSubview(hasigoUIImageView)
+        
+        scrollView.setContentOffset(CGPoint(x: 0, y: contentView.frame.height - scrollView.frame.height + 50), animated: false)
         
         //bgmを再生
         bgmPlayer.currentTime = 0
@@ -103,7 +111,7 @@ class ViewController: UIViewController {
         let stackHeight = CGFloat(sheepStack.count) * sheepSize.height
         sheepImageView.center = CGPoint(x: stackCenterX , y: stackStartY - 100 - stackHeight)
         
-        let chooseInt = Int.random(in: 1...3)
+        let chooseInt = Int.random(in: 1...2)
         if chooseInt == 1{
             //画像を高度によって変更
             var thingImage:UIImage?
@@ -116,7 +124,7 @@ class ViewController: UIViewController {
                 thingImage = UIImage(named:"cloud")
             default: break
             }
-            print(thingImage)
+            
             let grassNumber = Int.random(in: 1...5)
             let grassImage = {
                 switch grassNumber{
@@ -130,6 +138,7 @@ class ViewController: UIViewController {
                 
                 return UIImage(named: "grass1")
             }()
+            
             let flag = Bool.random()
             let flagDelection = Bool.random()
             //ものの画像を生成
@@ -142,11 +151,14 @@ class ViewController: UIViewController {
                 }
             }()
             
-            let checkInt = Int.random(in: 3...6)
+//            let checkInt = Int.random(in: 3...6)
             thingImageView.frame.size = sheepSize
-            let thingStackHeight = stackStartY - CGFloat(sheepStack.count) * sheepSize.height  - CGFloat(100 * checkInt)
-            thingImageView.center = CGPoint(x: (flagDelection ? stackCenterX / 2 : stackCenterX / 2 * 3) , y: thingStackHeight)
-            contentView.addSubview(thingImageView)
+            let thingStackHeight = stackStartY - CGFloat(sheepStack.count) * sheepSize.height  - CGFloat(100 * 8)
+            thingImageView.center = CGPoint(x:stackCenterX * 2 * Double.random(in: 0...1.0) , y: thingStackHeight)
+            if thingStackHeight < stackStartY - contentView.frame.width {
+                contentView.addSubview(thingImageView)
+            }
+            
         }
         
         //羊をcontentviewに追加して見えるように

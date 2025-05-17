@@ -66,7 +66,7 @@ class topViewController: UIViewController {
         
         // コミット用テストメッセージ
     }
-
+    
 }
     // ボタンをチカチカ点灯させるメソッド
     func startBlinkingAnimation(for button: UIButton) {
