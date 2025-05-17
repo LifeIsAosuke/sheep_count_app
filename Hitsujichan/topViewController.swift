@@ -66,7 +66,6 @@ class topViewController: UIViewController {
             self.present(viewController, animated: false, completion: nil)
         }
     }
-    
 }
 
 // ボタンをチカチカ点灯させるメソッド
@@ -78,7 +77,17 @@ func startBlinkingAnimation(for button: UIImageView) {
         button.alpha = 0.5 // Adjust transparency to create a blinking effect
     },
                    completion: nil)
-
+    
     // Ensure the button remains tappable
     button.isUserInteractionEnabled = true
+}
+// ボタンをチカチカ点灯させるメソッド
+func startBlinkingAnimation(for button: UIButton) {
+    UIView.animate(withDuration: 1,
+                   delay: 0,
+                   options: [.repeat, .autoreverse],
+                   animations: {
+        button.alpha = 0.5 // Adjust transparency to create a blinking effect
+    },
+                   completion: nil)
 }

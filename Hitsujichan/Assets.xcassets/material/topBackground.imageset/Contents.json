@@ -1,7 +1,11 @@
 {
   "images" : [
     {
+<<<<<<< HEAD
       "filename" : "appTitle.png",
+=======
+      "filename" : "Slice 1.png",
+>>>>>>> d2c43334311c9922cdb58ceeec6661d3a4d65a55
       "idiom" : "universal",
       "scale" : "1x"
     },

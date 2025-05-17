@@ -1,7 +1,11 @@
 {
   "images" : [
     {
+<<<<<<< HEAD
       "filename" : "Component 7.png",
+=======
+      "filename" : "appTitle.png",
+>>>>>>> d2c43334311c9922cdb58ceeec6661d3a4d65a55
       "idiom" : "universal",
       "scale" : "1x"
     },
