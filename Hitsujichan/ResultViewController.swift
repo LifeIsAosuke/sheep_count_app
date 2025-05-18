@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ResultViewController: UIViewController {
     
@@ -14,11 +15,15 @@ class ResultViewController: UIViewController {
     @IBOutlet var sheep: UIImageView!
     
     @IBOutlet var advice: UILabel!
+    
+    let soundPlayer = try!AVAudioPlayer(data:NSDataAsset(name:"resultMusic")!.data)
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        soundPlayer.play()
         
         // 画面呼び出し時にランダムに励ましの言葉を表示
         let message = getEncouragementMessage()
