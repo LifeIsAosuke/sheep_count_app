@@ -199,12 +199,36 @@ class ViewController: UIViewController {
             //bgmを停止
             bgmPlayer.stop()
             //終了画面へ遷移
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            if let resultViewController = storyboard.instantiateViewController(withIdentifier: "ResultViewController") as? ResultViewController {
+            // Create a circular layer for the animation
+            let circleLayer = CAShapeLayer()
+            let startPath = UIBezierPath(ovalIn: CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0))
+            let endRadius = sqrt(pow(self.view.bounds.width, 2) + pow(self.view.bounds.height, 2))
+            let endPath = UIBezierPath(ovalIn: CGRect(x: self.view.bounds.midX - endRadius, y: self.view.bounds.midY - endRadius, width: endRadius * 2, height: endRadius * 2))
+
+            circleLayer.path = endPath.cgPath
+            circleLayer.fillColor = UIColor.white.cgColor
+            self.view.layer.addSublayer(circleLayer)
+
+            // Animate the circle expansion
+            let animation = CABasicAnimation(keyPath: "path")
+            animation.fromValue = startPath.cgPath
+            animation.toValue = endPath.cgPath
+            animation.duration = 2.0 // Increased duration for a slower animation
+            animation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+            circleLayer.add(animation, forKey: "path")
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil) // Replace "Main" with your storyboard name
+                let resultViewController = storyboard.instantiateViewController(identifier: "ResultViewController") // Replace "ViewController" with the appropriate Storyboard ID
                 resultViewController.modalPresentationStyle = .fullScreen
-                self.present(resultViewController, animated: true, completion: nil)
+                self.present(resultViewController, animated: false, completion: nil)
             }
+            
         }
+        
+        
+        
+        
         
         //最も高い羊が画面中央に来るようにするコード
         //⬇️新しく追加した羊のcontentviewにおける高さ(originは中央の値)
